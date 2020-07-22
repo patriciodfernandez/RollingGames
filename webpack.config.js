@@ -8,9 +8,9 @@ module.exports = {
         index: './src/js/index.js',
         administrador: './src/js/administrador.js',
         contacto: './src/js/contacto.js',
-        juego1: './src/js/juego1.js',
-        juego2: './src/js/juego2.js',
-        login: './src/js/login.js'
+        juego: './src/js/juego.js',
+        login: './src/js/login.js',
+        imports: './src/js/imports.js'
     },
     output: {
         filename: 'js/[name].js',
@@ -34,9 +34,13 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            }
         ]
     },
-    plugins: [ 
+    plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
             minify: {
@@ -89,8 +93,24 @@ module.exports = {
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
-            },             
+            },
+            inject: true,
+            chunks: ['imports'],
             filename: './error404.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/nosotros.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
+            inject: true,
+            chunks: ['imports'],
+            filename: './nosotros.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/juego1.html',
@@ -103,7 +123,7 @@ module.exports = {
                 useShortDoctype: true
             },
             inject: true,
-            chunks: ['juego1'],
+            chunks: ['juego'],
             filename: './juego1.html'
         }),
         new HtmlWebpackPlugin({
@@ -117,8 +137,8 @@ module.exports = {
                 useShortDoctype: true
             },
             inject: true,
-            chunks: ['juego2'],
-            filename: './juego2.html'
+            chunks: ['juego'],
+            filename: './juego.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/login.html',
