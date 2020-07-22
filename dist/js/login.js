@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/login.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/index.js":
+/***/ "./src/js/login.js":
 /*!*************************!*\
-  !*** ./src/js/index.js ***!
+  !*** ./src/js/login.js ***!
   \*************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"Daleee viejooo\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\n//# sourceURL=webpack:///./src/js/login.js?");
 
 /***/ })
 
